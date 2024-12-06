@@ -91,19 +91,6 @@ In the function you extracted, identify any references to global variables, HAL 
 See if you can remove the dependency by separating the concern of your code from the behavior of the dependency. For example, you could move a call to get data from a peripheral to the caller and pass the data into your function instead.
 Create new inputs to your function for pointers to dependencies.
 
-# Activity 11
+# Activity 11 (Not Applicable - No one in the class got RENODE to work)
 Make sure your code compiles and everything is committed.
-We'll be running our code in the Renode simulator, so we can run our tests in GitHub actions.
-We can also run tests on the microcontroller.
-Create a new file in the test directory.
-It can have any name, but by convention it has a similar name to the file you put your code in. This can make it easier for another person to find the test later.
-Add the code template from test.c in this directory to the file.
-Your test must include a setUp and tearDown function. You can put any code in here that will be run at before and after each of test.
-Your tests must have a main function.
-This sets up the testing framework with the UNITY_BEGIN and UNITY_END macros.
-For each test, you will call the RUN_TEST macro.
-Remove the example tests and add your own.
-Tests by convention start with test_ but don't need to.
-Each test should generally demonstrate one possible case. Having multiple tests instead of one big one makes it easier to identify what is failing.
-Exercise the function under test and check the state of the GPIO peripherals.
-If you find yourself having trouble setting up the test, you have too many parameters, or a dependency is getting in the way, try refactoring the function further. Follow the same techniques from the previous activities.
+Running code in the Renode simulator, so we can run our tests in GitHub actions.
