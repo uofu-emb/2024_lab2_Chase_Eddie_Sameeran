@@ -19,6 +19,7 @@ Refactor for ease of testing.
 Clone the Unity repo as a submodule. git submodule add https://github.com/ThrowTheSwitch/Unity.git lib/unity
 Update the submodule contents (a common problem with submodules, the submodule folder may be empty) git submodule update --init --recursive
 
+
 # Activity 2
 Several tasks are defined in the .vscode configuration in the class template. The launch.json and task.json files have been modified to use the currently selected CMake target binary rather than the single target allowed by the Pico extension. You can switch the current launch/build target from the Command Palette or the CMake extension side panel with "Set Launch/Debug Target".
 
@@ -27,10 +28,15 @@ Verify that all tests pass. To run the test, you have a two options.
 you can set the CMake Launch/Debug target and flash using the "Flash" task accessible in the Command Palette.
 You can use picotool directly to flash the test ELF.
 
+Tests PASSED
+
 # Activity 3
 Discuss with your partner how to approach this particular code. Come up with a brief plan.
 
 You may find a particular pattern or strategy works well for you. Discuss with your partner if their preferred strategy is the same or different from yours.
+- Change variables descritption 
+- Change timing 
+- Comenting functions to see the behavior
 
 Discuss with your partner what type of code might cause your proposed strategies to break down.
 
