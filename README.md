@@ -49,9 +49,9 @@ You do not have to understand perfectly what is going on to proceed. Once you ha
 If you have not already done so, flash the code to your microcontroller and observe the behavior of the system.
 
 Delete the calls to vTaskStartScheduler (make sure you have committed prior to this!). Predict what you think will happen.
-
+-it wont schedule the task_handle
 Compile your changes and flash the micontroller. Does the behavior match your prediction?
-
+-the blink_task is not working 
 Restore your previous code. You can use the command git checkout src/main.c to restore the file to the current committed version of the file.
 
 # Activity 6
