@@ -11,3 +11,5 @@ void blink_task(void *params);
 void main_task(__unused void *params);
 
 char activity(char c);
+
+void led(bool *on, int *count);
