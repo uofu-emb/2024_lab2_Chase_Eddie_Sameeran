@@ -3,6 +3,7 @@
 ![example workflow](https://github.com/uofu-emb/2024_lab2_Chase_Eddie_Sameeran/actions/workflows/main.yml/badge.svg)
 
 # Lab 2 Testing (Eddie, Sameeran, Chase)
+# DoomBot5000 Branch
 
 # Learning objectives:
 Organize a project.
@@ -14,9 +15,13 @@ Run tests on hardware
 Write a manual test procedure.
 Refactor for ease of testing.
 
+# Test Pass/Fail Status
+![Application Screenshot](https://github.com/uofu-emb/2024_lab2_Chase_Eddie_Sameeran/blob/eddieDoomBot5000/tests_passing2.png)
+
 # Activity 1
 Clone the Unity repo as a submodule. git submodule add https://github.com/ThrowTheSwitch/Unity.git lib/unity
 Update the submodule contents (a common problem with submodules, the submodule folder may be empty) git submodule update --init --recursive
+
 
 # Activity 2
 Several tasks are defined in the .vscode configuration in the class template. The launch.json and task.json files have been modified to use the currently selected CMake target binary rather than the single target allowed by the Pico extension. You can switch the current launch/build target from the Command Palette or the CMake extension side panel with "Set Launch/Debug Target".
@@ -26,10 +31,15 @@ Verify that all tests pass. To run the test, you have a two options.
 you can set the CMake Launch/Debug target and flash using the "Flash" task accessible in the Command Palette.
 You can use picotool directly to flash the test ELF.
 
+Tests PASSED
+
 # Activity 3
 Discuss with your partner how to approach this particular code. Come up with a brief plan.
 
 You may find a particular pattern or strategy works well for you. Discuss with your partner if their preferred strategy is the same or different from yours.
+- Change variables descritption 
+- Change timing 
+- Comenting functions to see the behavior
 
 Discuss with your partner what type of code might cause your proposed strategies to break down.
 
@@ -42,9 +52,9 @@ You do not have to understand perfectly what is going on to proceed. Once you ha
 If you have not already done so, flash the code to your microcontroller and observe the behavior of the system.
 
 Delete the calls to vTaskStartScheduler (make sure you have committed prior to this!). Predict what you think will happen.
-
+-it wont schedule the task_handle
 Compile your changes and flash the micontroller. Does the behavior match your prediction?
-
+-the blink_task is not working 
 Restore your previous code. You can use the command git checkout src/main.c to restore the file to the current committed version of the file.
 
 # Activity 6
@@ -84,19 +94,6 @@ In the function you extracted, identify any references to global variables, HAL 
 See if you can remove the dependency by separating the concern of your code from the behavior of the dependency. For example, you could move a call to get data from a peripheral to the caller and pass the data into your function instead.
 Create new inputs to your function for pointers to dependencies.
 
-# Activity 11
+# Activity 11 (Not Applicable - No one in the class got RENODE to work)
 Make sure your code compiles and everything is committed.
-We'll be running our code in the Renode simulator, so we can run our tests in GitHub actions.
-We can also run tests on the microcontroller.
-Create a new file in the test directory.
-It can have any name, but by convention it has a similar name to the file you put your code in. This can make it easier for another person to find the test later.
-Add the code template from test.c in this directory to the file.
-Your test must include a setUp and tearDown function. You can put any code in here that will be run at before and after each of test.
-Your tests must have a main function.
-This sets up the testing framework with the UNITY_BEGIN and UNITY_END macros.
-For each test, you will call the RUN_TEST macro.
-Remove the example tests and add your own.
-Tests by convention start with test_ but don't need to.
-Each test should generally demonstrate one possible case. Having multiple tests instead of one big one makes it easier to identify what is failing.
-Exercise the function under test and check the state of the GPIO peripherals.
-If you find yourself having trouble setting up the test, you have too many parameters, or a dependency is getting in the way, try refactoring the function further. Follow the same techniques from the previous activities.
+Running code in the Renode simulator, so we can run our tests in GitHub actions.

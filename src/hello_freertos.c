@@ -12,6 +12,7 @@
 #include "pico/stdlib.h"
 #include "pico/multicore.h"
 #include "pico/cyw43_arch.h"
+#include "activity.h"
 
 int count = 0;
 bool on = false;
@@ -24,11 +25,19 @@ bool on = false;
 void blink_task(__unused void *params) {
     hard_assert(cyw43_arch_init() == PICO_OK);
     while (true) {
-        cyw43_arch_gpio_put(CYW43_WL_GPIO_LED_PIN, on);
-        if (count++ % 11) on = !on;
+        led(&on, &count);
         vTaskDelay(500);
     }
 }
+
+// void blink_task(__unused void *params) {
+//     hard_assert(cyw43_arch_init() == PICO_OK);
+//     while (true) {
+//         cyw43_arch_gpio_put(CYW43_WL_GPIO_LED_PIN, on);
+//         if (count++ % 11) on = !on;
+//         vTaskDelay(500);
+//     }
+// }
 
 void main_task(__unused void *params) {
     xTaskCreate(blink_task, "BlinkThread",
