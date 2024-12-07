@@ -14,7 +14,6 @@ Run tests in simulation
 Run tests on hardware
 Write a manual test procedure.
 Refactor for ease of testing.
-![Application Screenshot](https://github.com/uofu-emb/2024_lab2_Chase_Eddie_Sameeran/blob/eddieDoomBot5000/tests_passing1.png)
 
 # Activity 1
 Clone the Unity repo as a submodule. git submodule add https://github.com/ThrowTheSwitch/Unity.git lib/unity
